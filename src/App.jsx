@@ -22,10 +22,10 @@ function App() {
           <Route
 						path="conta/*"
 						element={
-						<ProtectedRoute>
-							<User />
+							<ProtectedRoute>
+								<User />
 							</ProtectedRoute>
-					} />
+					}/>
         </Routes>
         <Footer />
 			</UserStorage>

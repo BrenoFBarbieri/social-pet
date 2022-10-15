@@ -43,9 +43,9 @@ export const UserStorage = ({ children }) => {
 			await getUser(token);
 			navigate("/conta");
 		} catch (err) {
-			console.log(err);
 			setError(err.message);
 			setLogin(false);
+			console.log(err.message);
 		} finally {
 			setLoading(false);
 		}
@@ -59,12 +59,12 @@ export const UserStorage = ({ children }) => {
 					setError(null);
 					setLoading(true);
 					const { url, options } = TOKEN_VALIDATE_POST(token);
-					const response = fetch(url, options);
+					const response = await fetch(url, options);
 					if (!response.ok) throw new Error("Token inválido");
-					await getUser(token);
+					getUser(token);
 				} catch (err) {
-					userLogout();
-					console.error(err);
+					// userLogout();
+					console.error(err.message);
 				} finally {
 					setLoading(false);
 				}
