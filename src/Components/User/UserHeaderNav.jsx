@@ -13,6 +13,8 @@ const UserHeaderNav = () => {
 	const [mobile, setMobile] = React.useState(null);
 	const { userLogout } = React.useContext(UserContext);
 
+
+
 	return (
 		<nav className={styles.nav}>
 			<NavLink to='/conta' end>
