@@ -15,11 +15,10 @@ export function TOKEN_POST(body) {
 
 export function TOKEN_VALIDATE_POST(token) {
 	return {
-		url: API_URL + "/jwt-auth/v1/token",
+		url: API_URL + "/jwt-auth/v1/token/validate",
 		options: {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json",
 				Authorization: "Bearer " + token,
 			},
 		},
@@ -47,6 +46,19 @@ export function USER_POST(body) {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(body),
+		},
+	};
+}
+
+export function PHOTO_POST(formData, token) {
+	return {
+		url: API_URL + "/api/photo",
+		options: {
+			method: "POST",
+			headers: {
+				Authorization: "Bearer " + token,
+			},
+			body: formData,
 		},
 	};
 }
