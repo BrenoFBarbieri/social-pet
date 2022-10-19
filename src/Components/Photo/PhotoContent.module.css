@@ -11,11 +11,23 @@
 	transform: scale(.8);
 	animation: scaleUp .3s forwards;
 }
+.single.photo {
+	height: auto;
+	grid-template-columns: 1fr;
+}
 .img {
 	grid-row: 1/4;
 }
+.single .img {
+	grid-row: 1;
+	border-radius: .4rem;
+	overflow: hidden;
+}
 .details {
 	padding: 2rem 2rem 0 2rem;
+}
+.single .details {
+	padding: 1rem 0 0 0;
 }
 .author {
 	opacity: .5;
