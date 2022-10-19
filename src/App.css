@@ -80,3 +80,6 @@ a {
 		transform: initial;
 	}
 }
+.VictoryContainer {
+	height: initial !important;
+}
