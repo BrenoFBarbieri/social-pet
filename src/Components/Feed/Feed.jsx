@@ -2,7 +2,7 @@ import React from "react";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 
-const Feed = ({ userId }) => {
+const Feed = ({ user }) => {
 	const [modalPhoto, setModalPhoto] = React.useState(null);
 	const [pages, setPages] = React.useState([1]);
 	const [infinite, setInfinite] = React.useState(true);
@@ -39,7 +39,7 @@ const Feed = ({ userId }) => {
 			{pages.map((page) => (
 				<FeedPhotos
 					key={page}
-					userId={userId}
+					user={user}
 					page={page}
 					setModalPhoto={setModalPhoto}
 					setInfinite={setInfinite}
